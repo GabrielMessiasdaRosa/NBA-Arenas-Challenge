@@ -1,15 +1,17 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
 import React from "react";
+import Layout from "../components/default-layout";
+import { players } from "../utils/mocks/players";
 
 const IndexPage = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
+    <Layout title="Home | NBA Arenas Challenge">
       <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
+        {players.map((player) => (
+          <div className="flex flex-row">
+            <p className="mr-2 bg-blue-600">{player.name}</p>
+            <p className="bg-slate-500">{player.team}</p>
+          </div>
+        ))}{" "}
       </p>
     </Layout>
   );

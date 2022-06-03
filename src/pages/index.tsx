@@ -6,10 +6,8 @@ import useQueryParams from "../hooks/use-query-params";
 import { players } from "../utils/mocks/players";
 
 const IndexPage = () => {
-  const { params, updateParams } = useQueryParams();
-  React.useEffect(() => {
-    updateParams({ tab: "players" });
-  }, []);
+  const { params } = useQueryParams();
+
   const isPlayersPage = params.tab === "players";
   return (
     <Layout title="Home | NBA Arenas Challenge">
@@ -17,7 +15,7 @@ const IndexPage = () => {
       <Column className="items-center justify-center">
         <Column className="min-w-[750px]">
           {isPlayersPage && (
-            <Row className="grid grid-cols-7 bg-slate-900 px-2 py-5">
+            <Row className="grid grid-cols-7 bg-slate-900 rounded-b-md shadow-xl px-2 py-5">
               {players.map((player) => {
                 return (
                   <Column className="w-24 h-48 border border-slate-400 rounded-md overflow-hidden">

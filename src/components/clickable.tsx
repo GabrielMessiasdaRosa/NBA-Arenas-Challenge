@@ -4,7 +4,14 @@ export type Clickable = {
 } & React.ComponentProps<"button">;
 
 const Clickable = ({ children, ...props }: Clickable) => {
-  return <button {...props}>{children}</button>;
+  return (
+    <button
+      {...props}
+      className={`flex ${props.disabled && "cursor-not-allowed"} ${props.className}`}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Clickable;

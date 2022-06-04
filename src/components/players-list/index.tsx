@@ -12,7 +12,7 @@ const PlayersList = ({}: PlayersListProps) => {
   const [showDetailModal, setShowDetailModal] = React.useState(false);
   const [selectedPlayer, setSelectedPlayer] = React.useState<PlayerType>();
   const { params, updateParams } = useQueryParams();
-  const { data: players } = useGetPlayers(params);
+  const { data: players } = useGetPlayers({ params });
   React.useEffect(() => {
     if (params.page === undefined && params.per_page === undefined) {
       updateParams({ page: 1, per_page: 28 });

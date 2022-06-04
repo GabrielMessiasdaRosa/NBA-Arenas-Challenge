@@ -46,13 +46,13 @@ const PlayerDetailModal = ({
 
           <Column className="text-xl font-light">
             <span className="font-bold">Position: </span>
-            {player?.position}
+            {player?.position ? player.position : "N/A"}
           </Column>
 
           <Column className="text-xl font-light">
             <span className="font-bold">Height: </span>
 
-            {player?.height_feet && player?.height_inches != null
+            {player?.height_feet && player?.height_inches
               ? ` ${player?.height_feet}' ${player?.height_inches}"`
               : "N/A"}
           </Column>
@@ -60,9 +60,7 @@ const PlayerDetailModal = ({
           <Column className="text-xl font-light">
             <span className="font-bold">Weight: </span>
             {`${
-              player?.weight_pounds != null
-                ? player?.weight_pounds + " lbs"
-                : "N/A"
+              player?.weight_pounds ? player?.weight_pounds + " lbs" : "N/A"
             }`}
           </Column>
         </Row>

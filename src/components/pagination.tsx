@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import React from "react";
 import useQueryParams from "../hooks/use-query-params";
 import Clickable from "./clickable";
@@ -26,7 +27,7 @@ const Pagination = ({ data }: PaginationProps) => {
           }}
           className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-50  hover:bg-slate-500"
         >
-          Previous
+          <ChevronLeftIcon className="w-4" />
         </Clickable>
         <Clickable
           disabled={data?.current_page === data?.total_pages}
@@ -35,7 +36,7 @@ const Pagination = ({ data }: PaginationProps) => {
           }}
           className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-50  hover:bg-slate-500"
         >
-          Next
+          <ChevronRightIcon className="w-4" />
         </Clickable>
       </div>
     </nav>

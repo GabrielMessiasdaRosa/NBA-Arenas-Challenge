@@ -1,4 +1,3 @@
-import { uniq } from "lodash";
 import { PlayerType } from "../../types/player-type";
 import api from "../api";
 
@@ -20,16 +19,9 @@ const getPlayersService = async ({ params }: getPlayersServiceProps) => {
       },
     });
     const meta = response.data.meta;
-    const corePlayers = await response.data.data;
-    const players = uniq(corePlayers);
-    const playersWithImage = await players.map((player: PlayerType) => {
-      const playerWithImage = {
-        ...player,
-        image: `https://nba-players.herokuapp.com/players/${player.first_name.toLocaleLowerCase()}`,
-      };
-      return playerWithImage;
-    });
-    return { playersWithImage, meta };
+    const players = await response.data.data;
+
+    return { players, meta } as { players: PlayerType[]; meta: any };
   } catch (error) {
     console.log(error);
   }

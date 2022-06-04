@@ -7,7 +7,7 @@ const Clickable = ({ children, ...props }: Clickable) => {
   return (
     <button
       {...props}
-      className={`${props.disabled && "cursor-not-allowed"} ${props.className}`}
+      className={`flex ${props.disabled && "cursor-not-allowed"} ${props.className}`}
     >
       {children}
     </button>

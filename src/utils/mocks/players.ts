@@ -83,17 +83,6 @@ export const players: Player[] = [
     number: 13,
     image: "https://nba-players.herokuapp.com/players/draymond_green",
   },
-  {
-    id: 7,
-    name: "Kemba Walker",
-    position: "SG",
-    team: "Golden State Warriors",
-    age: 30,
-    height: "6-7",
-    weight: 220,
-    number: 1,
-    image: "https://nba-players.herokuapp.com/teams/kemba_walker",
-  },
 ];
 
 export const teams: Teams[] = [

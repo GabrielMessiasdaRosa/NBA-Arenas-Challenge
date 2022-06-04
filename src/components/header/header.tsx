@@ -4,11 +4,16 @@ import HeaderTab from "./header-tab";
 export type HeaderProps = {};
 
 const Header = ({}: HeaderProps) => {
-  const { updateParams } = useQueryParams();
+  const { params, updateParams } = useQueryParams();
+  React.useEffect(() => {
+    if (params.tab === undefined) {
+      updateParams({ tab: "players" });
+    }
+  }, []);
   return (
     <>
-      <header className="flex h-20 items-end justify-center bg-slate-800 shadow-md">
-        <nav className="flex h-12 min-w-[752px] max-w-3xl">
+      <header className="flex min-h-12 items-end justify-center bg-slate-800 shadow-md">
+        <nav className="flex h-12 min-w-[752px] ">
           <HeaderTab
             label="Players"
             onClick={() => {

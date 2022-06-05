@@ -1,25 +1,27 @@
 import { XIcon } from "@heroicons/react/outline";
-import Image from "next/image";
-import React from "react";
+import useGetPlayer from "api-handlers/api-hooks/use-get-player";
 import metalbg from "assets/images/metal-bg.jpg";
 import GoogleLogo from "assets/svg/google-logo.svg";
 import NbaLogo from "assets/svg/nba-logo.svg";
 import WaveIcon from "assets/svg/wave.svg";
-import { PlayerType } from "types/player-type";
-import Modal from "components/modal";
 import { Column, Row } from "components/box";
 import Clickable from "components/clickable";
+import Modal from "components/modal";
+import Image from "next/image";
+import React from "react";
+import { PlayerType } from "types/player-type";
 export type PlayerDetailModalProps = {
   isOpen: boolean;
   onRequestClose: () => void;
-  player: PlayerType;
+  playerId: PlayerType["id"];
 };
 
 const PlayerDetailModal = ({
   isOpen,
   onRequestClose,
-  player,
+  playerId,
 }: PlayerDetailModalProps) => {
+  const { player } = useGetPlayer({ playerId });
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       <Column className="w-full h-full bg-white rounded-md shadow-xl">
@@ -74,22 +76,18 @@ const PlayerDetailModal = ({
           <Row className="grid grid-cols-2 gap-y-4 rounded-lg shadow-md bg-slate-50 h-30 p-6">
             <Column className="text-xl font-light">
               <span className="font-bold">Actual Team: </span>
-              {player?.team.name}
+              {player?.team.name || "N/A"}
             </Column>
-
             <Column className="text-xl font-light">
               <span className="font-bold">Position: </span>
-              {player?.position ? player.position : "N/A"}
+              {player?.position || "N/A"}
             </Column>
-
             <Column className="text-xl font-light">
               <span className="font-bold">Height: </span>
-
               {player?.height_feet && player?.height_inches
                 ? ` ${player?.height_feet}' ${player?.height_inches}"`
                 : "N/A"}
             </Column>
-
             <Column className="text-xl font-light">
               <span className="font-bold">Weight: </span>
               {`${

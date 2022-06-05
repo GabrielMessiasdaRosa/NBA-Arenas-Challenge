@@ -6,7 +6,7 @@ export type LoadingIconProps = {};
 const LoadingIcon = ({}: LoadingIconProps) => {
   return (
     <>
-      <Column className="col-span-7 text-white flex items-center justify-center">
+      <Column className="text-white flex items-center justify-center">
         <ArrowDownIcon className="h-24 w-24 animate-bounce" />
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -23,7 +23,7 @@ const getPlayersService = async ({ params }: getPlayersServiceProps) => {
 
     return { players, meta } as { players: PlayerType[]; meta: any };
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 export default getPlayersService;

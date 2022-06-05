@@ -1,5 +1,5 @@
 import useGetPlayers from "api-handlers/api-hooks/use-get-players";
-import { Row } from "components/box";
+import { Column, Row } from "components/box";
 import LoadingIcon from "components/loading-icon";
 import Pagination from "components/pagination";
 import useQueryParams from "hooks/use-query-params";
@@ -30,7 +30,9 @@ const PlayersList = (props) => {
     <React.Fragment>
       <Row className="grid grid-cols-7 h-[840px] bg-slate-900 rounded-b-md shadow-xl px-2 py-5 ">
         {pending ? (
-          <LoadingIcon />
+          <Column className="col-span-7 justify-center items-center">
+            <LoadingIcon />
+          </Column>
         ) : (
           players?.map((player, index) => {
             return (
@@ -49,7 +51,7 @@ const PlayersList = (props) => {
         <PlayerDetailModal
           isOpen={showDetailModal}
           onRequestClose={() => setShowDetailModal(false)}
-          player={selectedPlayer}
+          playerId={selectedPlayer?.id}
         />
       </Row>
       <Pagination data={meta} />

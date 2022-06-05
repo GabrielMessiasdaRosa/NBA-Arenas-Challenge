@@ -1,12 +1,13 @@
+import useGetPlayers from "api-handlers/api-hooks/use-get-players";
+import { Row } from "components/box";
+import LoadingIcon from "components/loading-icon";
+import Pagination from "components/pagination";
+import useQueryParams from "hooks/use-query-params";
 import React from "react";
-import useGetPlayers from "../../api-handlers/api-hooks/use-get-players";
-import useQueryParams from "../../hooks/use-query-params";
-import { PlayerType } from "../../types/player-type";
-import { Row } from "../box";
-import Pagination from "../pagination";
-import LoadingIcon from "./loading-icon";
+import { PlayerType } from "types/player-type";
 import PlayerDetailModal from "./player-detail-modal";
 import PlayerListItem from "./player-list-item";
+
 export type PlayersListProps = {};
 
 const PlayersList = (props) => {

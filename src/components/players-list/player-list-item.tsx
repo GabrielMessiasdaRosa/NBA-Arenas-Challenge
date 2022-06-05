@@ -1,8 +1,8 @@
+import { Column, Row } from "components/box";
+import Clickable from "components/clickable";
 import Image from "next/image";
 import React from "react";
-import { PlayerType } from "../../types/player-type";
-import { Column, Row } from "../box";
-import Clickable from "../clickable";
+import { PlayerType } from "types/player-type";
 export type PlayerListItemProps = {
   player: PlayerType;
   onClick: () => void;

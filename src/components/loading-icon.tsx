@@ -1,6 +1,6 @@
 import { ArrowDownIcon } from "@heroicons/react/outline";
 import React from "react";
-import { Column } from "../box";
+import { Column } from "./box";
 export type LoadingIconProps = {};
 
 const LoadingIcon = ({}: LoadingIconProps) => {

@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import useQueryParams from "hooks/use-query-params";
 import React from "react";
-import useQueryParams from "../hooks/use-query-params";
 import Clickable from "./clickable";
 export type PaginationProps = {
   data: any;

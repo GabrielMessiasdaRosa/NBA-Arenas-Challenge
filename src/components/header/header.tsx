@@ -1,6 +1,7 @@
+import useQueryParams from "hooks/use-query-params";
 import React from "react";
-import useQueryParams from "../../hooks/use-query-params";
 import HeaderTab from "./header-tab";
+
 export type HeaderProps = {};
 
 const Header = ({}: HeaderProps) => {

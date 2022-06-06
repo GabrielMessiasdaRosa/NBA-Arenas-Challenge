@@ -22,7 +22,7 @@ const TeamDetailModal = ({
   const { team, pending } = useGetTeam({ teamId });
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <Column className="max-h-[528px] bg-white rounded-md shadow-xl items-center justify-center">
+      <Column className="min-h-[528px] bg-white rounded-md shadow-xl items-center justify-center">
         {pending ? (
           <LoadingIcon className="text-slate-700" />
         ) : (

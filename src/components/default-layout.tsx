@@ -1,29 +1,21 @@
-import React, { ReactNode } from "react";
-import Link from "next/link";
 import Head from "next/head";
+import React, { ReactNode } from "react";
+import { Column } from "./box";
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
+const Layout = ({ children, title = "NBA ARENAS CHALLENGE" }: Props) => (
+  <Column className="bg-slate-700 h-screen">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header className="h-20 mb-3 bg-blue-600">
-      <nav>
-      </nav>
-    </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
+  </Column>
 );
 
 export default Layout;

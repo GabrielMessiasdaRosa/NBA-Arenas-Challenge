@@ -11,6 +11,7 @@ const Header = ({}: HeaderProps) => {
       updateParams({ tab: "players" });
     }
   }, []);
+
   return (
     <>
       <header className="flex min-h-12 items-end justify-center bg-slate-800 shadow-md">
@@ -18,13 +19,13 @@ const Header = ({}: HeaderProps) => {
           <HeaderTab
             label="Players"
             onClick={() => {
-              updateParams({ tab: "players" });
+              updateParams({ tab: "players", page: 1, per_page: 28 });
             }}
           />
           <HeaderTab
             label="Teams"
             onClick={() => {
-              updateParams({ tab: "teams" });
+              updateParams({ tab: "teams", page: 1, per_page: 6 });
             }}
           />
         </nav>

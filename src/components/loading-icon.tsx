@@ -1,12 +1,16 @@
 import { ArrowDownIcon } from "@heroicons/react/outline";
 import React from "react";
 import { Column } from "./box";
-export type LoadingIconProps = {};
+export type LoadingIconProps = {
+  className?: string;
+};
 
-const LoadingIcon = ({}: LoadingIconProps) => {
+const LoadingIcon = ({ className = "" }: LoadingIconProps) => {
   return (
     <>
-      <Column className="text-white flex items-center justify-center">
+      <Column
+        className={`text-white flex items-center justify-center ${className}`}
+      >
         <ArrowDownIcon className="h-24 w-24 animate-bounce" />
         <svg
           xmlns="http://www.w3.org/2000/svg"

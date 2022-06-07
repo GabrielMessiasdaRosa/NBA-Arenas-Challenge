@@ -1,6 +1,6 @@
 # NBA ARENAS CHALLENGE
 
-This is a really simple project to show my code abilities 
+This is a really simple project to show my code skills 
 
 #### How to run it ? 
 

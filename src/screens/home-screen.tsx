@@ -1,6 +1,5 @@
 import { Column } from "components/box";
-import Layout from "components/default-layout";
-import Header from "components/header/header";
+import DefaultLayout from "components/default-layout";
 import PlayersList from "components/players-list";
 import TeamsList from "components/teams-list";
 import useQueryParams from "hooks/use-query-params";
@@ -12,15 +11,14 @@ const HomeScreen = ({}: HomeScreenProps) => {
   const isPlayersPage = params.tab === "players";
   const isTeamsPage = params.tab === "teams";
   return (
-    <Layout title="Home | NBA Arenas Challenge">
-      <Header />
+    <DefaultLayout title="Home | NBA Arenas Challenge">
       <Column className="items-center justify-center">
         <Column className="min-w-[750px]">
           {isPlayersPage && <PlayersList />}
           {isTeamsPage && <TeamsList />}
         </Column>
       </Column>
-    </Layout>
+    </DefaultLayout>
   );
 };
 

@@ -12,7 +12,7 @@ import PlayerListItem from "./player-list-item";
 
 export type PlayersListProps = {};
 
-const PlayersList = (props) => {
+const PlayersList = () => {
   const [showDetailModal, setShowDetailModal] = React.useState(false);
   const [selectedPlayer, setSelectedPlayer] = React.useState<PlayerType>();
   const [search, setSearch] = React.useState("");
@@ -20,7 +20,6 @@ const PlayersList = (props) => {
   const { params, updateParams } = useQueryParams();
   const { players, meta, pending } = useGetPlayers({
     params,
-    pageProps: props,
   });
 
   React.useEffect(() => {

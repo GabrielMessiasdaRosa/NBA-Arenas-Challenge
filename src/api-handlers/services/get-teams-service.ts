@@ -10,16 +10,19 @@ export type getTeamsServiceProps = {
 
 const getTeamsService = async ({ params }: getTeamsServiceProps) => {
   try {
-    const response = await api.get(`/api/teams`, {
-      params: {
-        page: params.page,
-        per_page: params.per_page,
-      },
-    });
+    const urlParams = new URLSearchParams(params as any);
+    const response = await api.get(
+      `${process.env.NEXT_PUBLIC_BALLDONTLIE_API_URL}/teams?${urlParams}`,
+      {
+        params: {
+          page: params.page,
+          per_page: params.per_page,
+        },
+      }
+    );
     const meta = response.data.meta;
     const teamsCoreData = await response.data.data;
     const teams: TeamType[] = teamsCoreData.map((team: TeamType) => {
-      console.log('team.conference', team.conference)
       const imageUrl = `/${team.name
         .toLowerCase()
         .replace(/\s/g, "")}-logo.webp`;

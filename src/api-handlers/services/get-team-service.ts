@@ -7,7 +7,9 @@ export type GetTeamServiceProps = {
 
 export default async function getTeamService({ teamId }: GetTeamServiceProps) {
   try {
-    const response = (await api.get(`/api/teams/${teamId}`)) as any;
+    const response = (await api.get(
+      `${process.env.NEXT_PUBLIC_BALLDONTLIE_API_URL}/teams/${teamId}`
+    )) as any;
     const team = response.data as TeamType;
 
     const imageUrl = `/${team.name.toLowerCase().replace(/\s/g, "")}-logo.webp`;

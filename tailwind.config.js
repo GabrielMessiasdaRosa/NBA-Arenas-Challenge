@@ -30,6 +30,9 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    fontFamily: {
+       'sans': ['Helvetica', 'Arial', 'sans-serif'],
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

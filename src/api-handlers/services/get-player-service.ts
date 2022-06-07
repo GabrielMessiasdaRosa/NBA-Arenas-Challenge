@@ -9,7 +9,9 @@ export default async function getPlayerService({
   playerId,
 }: GetPlayerServiceProps) {
   try {
-    const response = (await api.get(`/api/players/${playerId}`)) as any;
+    const response = (await api.get(
+      `${process.env.NEXT_PUBLIC_BALLDONTLIE_API_URL}/players/${playerId}`
+    )) as any;
     const player = response.data as PlayerType;
     return player;
   } catch (error) {

@@ -47,7 +47,7 @@ const PlayersList = (props) => {
           }}
         />
       </Column>
-      <Row className="grid grid-cols-7 min-w-[752px] h-[840px] bg-slate-900 rounded-b-md shadow-xl px-2 py-5 ">
+      <Row className="grid grid-cols-7 min-w-[752px] h-[840px] bg-slate-900 rounded-md shadow-xl px-2 py-5 ">
         {pending ? (
           <Column className="col-span-7 justify-center items-center">
             <LoadingIcon />
